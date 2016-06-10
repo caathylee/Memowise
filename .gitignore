@@ -41,4 +41,3 @@ bower_components/
 
 # Facebook OAuth keys
 src/server/config/authorizeFacebook.js
-compiled/config/authorizeFacebook.js
