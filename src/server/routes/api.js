@@ -5,6 +5,7 @@ import decks from '../controllers/Decks';
 import plays from '../controllers/Plays';
 import auth from '../controllers/Auth';
 import createCard from '../controllers/Create';
+import scoreboard from '../controllers/Scoreboard';
 
 const router = new Router();
 
@@ -23,6 +24,11 @@ router.route('/api/create-deck').post(auth.checkAuthServer, createCard.createDec
  */
 router.route('/api/play').post(auth.checkAuthServer, plays.create);
 router.route('/api/last-play/deck/:deckId').get(auth.checkAuthServer, plays.findLatest);
+
+/*
+ * Scoreboard
+ */
+router.route('/api/scoreboard').get(scoreboard.findAllUserStats);
 
 /*
  * Local Auth

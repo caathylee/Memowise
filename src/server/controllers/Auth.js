@@ -77,6 +77,10 @@ const signOut = (req, res) => {
   res.redirect('/');
 };
 
+const scoreboard = (req, res) => {
+  
+};
+
 // Facebook sign in
 const authFacebook = (req, res, next) => {
   passport.authenticate('facebook', { scope: 'email' })(req, res, next);
@@ -90,4 +94,4 @@ const afterAuthFB = (req, res, next) => {
 };
 
 
-export default { createAccount, signIn, verify, checkAuthorized, checkAuthServer, signOut, authFacebook, afterAuthFB };
+export default { createAccount, signIn, verify, checkAuthorized, checkAuthServer, signOut, scoreboard, authFacebook, afterAuthFB };

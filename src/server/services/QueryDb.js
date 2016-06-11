@@ -1,5 +1,6 @@
 import Cards from '../models/Card.js';
 import Plays from '../models/Play.js';
+import Users from '../models/User.js';
 
 const queryDb = () => {
   // given a deck id, get all the cards in that deck
@@ -15,10 +16,16 @@ const queryDb = () => {
     Plays.find({ cardId, deckId, userId })
   );
 
+  // get all usernames from database
+  const getUserNames = (name) => (
+    User.find({ name })
+  );
+
   return ({
     getDeck,
     getDistinctCardsPlayed,
     getCardPlays,
+    getUserNames,
   });
 };
 
